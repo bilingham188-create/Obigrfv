@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+  
+  .font-serif-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+  
+  .font-cinzel {
+    font-family: 'Cinzel', serif;
+  }
+  
+  .font-mono-data {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+.water-glow {
+  background: radial-gradient(circle at 50% 100%, rgba(6, 182, 212, 0.25) 0%, transparent 60%);
+}
+
+/* Cinematic film grain & vignette effects */
+.cinematic-vignette {
+  background: radial-gradient(circle, transparent 50%, rgba(10, 8, 6, 0.85) 100%);
+}
+
+.cinematic-glow {
+  background: radial-gradient(circle at 50% 80%, rgba(249, 115, 22, 0.25) 0%, transparent 60%);
+}
+
+/* Ken Burns animations */
+@keyframes kenburns-pan-left {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.18) translate(-3%, -2%); }
+}
+
+@keyframes kenburns-pan-right {
+  0% { transform: scale(1.15) translate(-2%, 2%); }
+  100% { transform: scale(1) translate(2%, -1%); }
+}
+
+@keyframes kenburns-zoom-in {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.25); }
+}
+
+@keyframes kenburns-zoom-out {
+  0% { transform: scale(1.22); }
+  100% { transform: scale(1); }
+}
+
+@keyframes camera-shake {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  10% { transform: translate(-3px, 2px) rotate(-0.5deg); }
+  20% { transform: translate(3px, -2px) rotate(0.5deg); }
+  30% { transform: translate(-4px, -1px) rotate(-0.3deg); }
+  40% { transform: translate(4px, 3px) rotate(0.4deg); }
+  50% { transform: translate(-2px, 2px) rotate(-0.2deg); }
+  60% { transform: translate(3px, 1px) rotate(0.3deg); }
+  70% { transform: translate(-3px, -2px) rotate(-0.4deg); }
+  80% { transform: translate(2px, -1px) rotate(0.2deg); }
+  90% { transform: translate(-1px, 2px) rotate(-0.1deg); }
+}
+
+.animate-kenburns-pan-left {
+  animation: kenburns-pan-left 14s cubic-bezier(0.25, 1, 0.5, 1) infinite alternate;
+}
+
+.animate-kenburns-pan-right {
+  animation: kenburns-pan-right 14s cubic-bezier(0.25, 1, 0.5, 1) infinite alternate;
+}
+
+.animate-kenburns-zoom-in {
+  animation: kenburns-zoom-in 14s cubic-bezier(0.25, 1, 0.5, 1) infinite alternate;
+}
+
+.animate-kenburns-zoom-out {
+  animation: kenburns-zoom-out 14s cubic-bezier(0.25, 1, 0.5, 1) infinite alternate;
+}
+
+.animate-camera-shake {
+  animation: camera-shake 0.45s ease-in-out infinite;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(28, 25, 23, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(120, 113, 108, 0.4);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(217, 119, 6, 0.6);
+}

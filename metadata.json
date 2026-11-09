@@ -1,0 +1,6 @@
+{
+  "name": "Cataclysme 1902 : Montage Documentaire",
+  "description": "موقع وثائقي شامل ومتعدد الوسائط حول كوارث الفيضانات: فيديوهات سينمائية، صور وأرشيفات، نصوص علمية، محاكي ارتفاع المياه، وأعظم فيضانات التاريخ.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
